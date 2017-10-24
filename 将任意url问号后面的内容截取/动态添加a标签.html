@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将任意url问号后面的内容截取</title>
+</head>
+<body>
+<script>
+    function aaa() {
+        var link = document.createElement('a');
+        link.href = "http://www.zhufeng.com/?name='zxt'&age:28&sex=0";
+        var search = link.search,
+            obj = {};
+        if (search.length === 0) return;
+        search.substr(1).split(/&|=/g);
+        for (var i = 0; i < search.length; i += 2) {
+            var key = search[i],
+                value = search[i + 1];
+            obj[key] = value;
+        }
+        link = null;
+        return obj;
+    }
+</script>
+</body>
+</html>

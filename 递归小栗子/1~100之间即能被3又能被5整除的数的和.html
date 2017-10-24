@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求和</title>
+</head>
+<body>
+<script>
+    function fn(num) {
+        if(num>100){
+            return 0;
+        }
+        if(num%3===0&&num%5===0){
+            return num + fn(num+1);
+        }
+        return fn(num+1);
+    }
+    fn(1);
+</script>
+</body>
+</html>
